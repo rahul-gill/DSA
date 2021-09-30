@@ -1,4 +1,6 @@
 .vscode
+*.out
+*.cph
 *.exe
 *.txt
 *.stackdump
