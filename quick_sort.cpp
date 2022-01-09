@@ -7,15 +7,15 @@ int partition(vector<int> &arr, int l,int r){
     int ramdom_index = l + (rand() % (r-l));
     swap(arr[ramdom_index], arr[r-1]);
     int pivot = arr[r-1];
-    int i = l-1;
+    int i = l;
     for(int j = l; j<r-1;j++){
         if(arr[j] <= pivot){
-            i++;
             swap(arr[i], arr[j]);
+            i++;
         }
     }
-    swap(arr[r-1], arr[i+1]);
-    return i+1;
+    swap(arr[r-1], arr[i]);
+    return i;
 }
 
 void quick_sort(vector<int> &arr, int l = 0,int r = INT_MIN){
