@@ -1,6 +1,11 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+/**
+ * Given n non-negative integers representing an elevation map where the width of each bar is 1,
+ * compute how much water it can trap after raining.
+ */
+
 long long trappingWater(int arr[], int n){
     vector<int> l(n), r(n);
     l[0] = arr[0];

@@ -1,6 +1,16 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+/**
+ * Examples:
+    Input: arr[] = {121, 131, 20}
+    Output: Array is not a PalinArray
+    For the given array, element 20 is not a palindrome. Thus the array is not a PalinArray.
+    Input: arr[] = {111, 121, 222, 333, 444}
+    Output: Array is a PalinArray
+    For the given array, all the elements of the array are palindromes. Thus the array is a PalinArray.
+ */
+
 int PalinArray(int a[], int n)
 {
     for(int k=0; k<n; k++){

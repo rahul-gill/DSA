@@ -1,15 +1,22 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+/**
+ * Given an array of intervals where intervals[i] = [starti, endi], merge all overlapping intervals,
+ * and return an array of the non-overlapping intervals that cover all the intervals in the input.
+ */
+
 class Solution {
 public:
-   static  bool vectorSort(vector<int> a, vector<int> b){
-        if(a[0] >= b[0]) return 0;
-        else return 1;
-    }
     vector<vector<int>> merge(vector<vector<int>>& intervals) {
         if(intervals.size() <= 1) return intervals;
-        sort(intervals.begin(), intervals.end(), vectorSort);
+
+        // sort intervals based on their starting index
+        sort(
+            intervals.begin(),
+            intervals.end(),
+            [](vector<int> a, vector<int> b){ return (a[0] < b[0]); }
+        );
 
         vector<vector<int>> ret;
         ret.push_back(intervals[0]);

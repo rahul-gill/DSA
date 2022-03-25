@@ -1,20 +1,15 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int getMedian(int ar1[], int ar2[], int n)
-{
-    if (n <= 0)
-        return -1;
-    if (n == 1)
-        return (ar1[0] + ar2[0])/2;
-    if (n == 2)
-        return (max(ar1[0], ar2[0]) + min(ar1[1], ar2[1])) / 2;
+int getMedian(int ar1[], int ar2[], int n){
+    if (n <= 0) return -1;
+    if (n == 1) return (ar1[0] + ar2[0])/2;
+    if (n == 2) return (max(ar1[0], ar2[0]) + min(ar1[1], ar2[1])) / 2;
  
     int m1 = median(ar1, n);     
     int m2 = median(ar2, n); 
 
-    if (m1 == m2)
-        return m1;
+    if (m1 == m2) return m1;
     else if (m1 < m2)
     {
         if (n % 2 == 0)

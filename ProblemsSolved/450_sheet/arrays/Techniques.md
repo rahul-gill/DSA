@@ -1,0 +1,2 @@
+- Kadane's algorithm
+- Merge sort

@@ -4,13 +4,15 @@ using namespace std;
 class Solution{   
 public:
     int getPairsCount(int arr[], int n, int k) {
-        unordered_map<int ,int>m;
-        int a=0;
-        for(int i=0; i<n; i++){
-            int b=k-arr[i];
-            if(m[b]) a += m[b];
+        unordered_map<int, int> m;
+        int count = 0;
+
+        for (int i = 0; i < n; i++) {
+            if (m.find(k - arr[i]) != m.end()) {
+                count += m[k - arr[i]];
+            }
             m[arr[i]]++;
         }
-        return a;    
+        return count;
     }
 };
