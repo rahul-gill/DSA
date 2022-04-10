@@ -54,6 +54,9 @@ void debug_out(Head H, Tail... T) {
 
 
 int main(){
+    vector<int> arr{1,2,4,4};
+    int a = 4;
+    debug(arr, a);
 
-
+    debug(arr);
 }
