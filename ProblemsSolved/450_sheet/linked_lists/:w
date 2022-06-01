@@ -1,0 +1,33 @@
+#include "linked_list.h"
+
+using itr =  list<char>::iterator;
+string FirstNonRepeating(string A){
+    unordered_map<char,itr> char_cnt;
+    list<char> non_repeating;
+
+    for(auto &x: A){
+        auto pr = char_cnt.find(x);
+
+        if(pr == char_cnt.end()){
+            non_repeating.push_back(x);
+            char_cnt[x] = --(non_repeating.end());
+        }
+        else{
+            auto it = char_cnt[x];
+            if(it != non_repeating.end())
+                non_repeating.erase(it);
+            char_cnt[x] = non_repeating.end();
+        }
+        if(!non_repeating.size())
+            x = '#';
+        else
+            x = non_repeating.front();
+    }
+    return A;
+}
+
+int main(){
+    /* string x = "ftvbwnimpvvbfvtot"; */
+    string x = "zzz";
+    debug(FirstNonRepeating(x));
+}

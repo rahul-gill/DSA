@@ -3,9 +3,23 @@
 struct Node{
     int data;
     Node* next;
+    Node* prev;
     
     Node(int x): data(x) {}
-    Node(int x, Node* y): data(x), next(y) {}
+    Node(int x, Node* y): data(x), next(y) {
+        y->prev = this;
+    }
+    Node(std::initializer_list<int> arr){
+        data = (arr.size()) ? *(arr.begin()) : 0;
+
+        Node* node = this;
+        auto it = arr.begin();
+        ++it;
+        for (; it != arr.end(); ++it){
+            node->next = new Node(*it);
+            node = node->next;
+        }
+    }
 };
 
 string to_string(Node* x){
@@ -18,7 +32,7 @@ string to_string(Node* x){
     return s;
 }
 
-Node* fromArr(vector<int> arr){
+Node* arr_to_ll(vector<int> arr){
     if(!arr.size())
         return NULL;
     int i=0;
