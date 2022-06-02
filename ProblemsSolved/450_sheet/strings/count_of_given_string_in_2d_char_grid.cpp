@@ -1,8 +1,12 @@
 #include<cp_debug.h>
 
+//this function is called for every character in matrix
 int hSearch(int i, int j, vector<vector<char>> &mat, string target, int upto){
     int found = 0;
     
+    //we go recursively in each direction and checking if the word is matched
+    //also we put 0 in place of traversed characters so that we don't take the same character(same char at same place) twice
+    //when returning from recursion, we put the original char value at its place
     if(i>=0 && j>=0 && i<mat.size() && j<mat[i].size() && mat[i][j] == target[upto]){
         char temp = target[upto];
         mat[i][j] = 0; //putting zero so that we don't make mistakes for words like 'ee'
