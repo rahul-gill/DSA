@@ -8,12 +8,12 @@ int minOps(vector<int> arr){
             i++, j--;
         else if(arr[i] > arr[j]){
             j--;
-            arr[j] = arr[j+1];
+            arr[j] += arr[j+1];
             ans++;
         }
         else{
             i++;
-            arr[i] = arr[i-1];
+            arr[i] += arr[i-1];
             ans++;
         }
     }
